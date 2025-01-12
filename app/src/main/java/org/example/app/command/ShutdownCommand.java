@@ -2,16 +2,17 @@ package org.example.app.command;
 
 import org.example.server.ServerRemote;
 
+import java.net.Socket;
 import java.rmi.RemoteException;
 
 /**
  * Klasse zur Implementierung des Befehls "Shutdown"
  */
-public class ShutdownCommand extends Command {
-    private ServerRemote server;
+public class ShutdownCommand extends CuncurCommand {
+    private final ServerRemote server;
 
-    public ShutdownCommand(String[] argument, ServerRemote server) {
-        super(argument);
+    public ShutdownCommand(String[] argument, ServerRemote server, Socket socket) {
+        super(argument, socket);
         this.server = server;
     }
 
