@@ -3,7 +3,7 @@ package org.example.app.command;
 import java.net.Socket;
 import java.rmi.RemoteException;
 
-public class CancelTaskCommand extends CuncurCommand {
+public class CancelTaskCommand extends ConcurrCommand {
 
     public CancelTaskCommand(String[] argument, Socket socket) {
         super(argument, socket);

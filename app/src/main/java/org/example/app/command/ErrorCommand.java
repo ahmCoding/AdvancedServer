@@ -5,7 +5,7 @@ import java.net.Socket;
 /**
  * Klasse zur Implementierung des Befehls "Error"
  */
-public class ErrorCommand extends CuncurCommand {
+public class ErrorCommand extends ConcurrCommand {
     public ErrorCommand(String[] argument, Socket socket) {
         super(argument, socket);
     }

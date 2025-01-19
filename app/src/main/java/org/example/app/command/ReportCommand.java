@@ -7,7 +7,7 @@ import java.net.Socket;
 /**
  * Klasse zur Implementierung des Befehls "Report"
  */
-public class ReportCommand extends CuncurCommand {
+public class ReportCommand extends ConcurrCommand {
     public ReportCommand(String[] argument, Socket socket) {
         super(argument, socket);
         cacheable = true;

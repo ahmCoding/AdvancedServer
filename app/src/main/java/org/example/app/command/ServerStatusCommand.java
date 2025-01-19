@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
 /**
  * Gibt den aktuellen Status des Servers zurück.
  */
-public class ServerStatusCommand extends CuncurCommand {
+public class ServerStatusCommand extends ConcurrCommand {
     private final ServerRemote server;
 
     public ServerStatusCommand(String[] argument, ServerRemote server, Socket socket) {

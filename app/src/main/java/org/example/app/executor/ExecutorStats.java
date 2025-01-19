@@ -1,4 +1,4 @@
-package org.example.app.model;
+package org.example.app.executor;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicLong;
@@ -6,11 +6,11 @@ import java.util.concurrent.atomic.AtomicLong;
 /**
  * Klasse zur Repräsentation der Client-Statistik
  **/
-public class ClientStats {
+public class ExecutorStats {
     private AtomicInteger numOfTasks;
     private AtomicLong sumOfExecutionTime;
 
-    public ClientStats() {
+    public ExecutorStats() {
         this.numOfTasks = new AtomicInteger(0);
         this.sumOfExecutionTime = new AtomicLong(0L);
     }

@@ -7,7 +7,7 @@ import java.net.Socket;
 /**
  * Klasse zur Implementierung des Befehls "Query"
  */
-public class QueryCommand extends CuncurCommand {
+public class QueryCommand extends ConcurrCommand {
     public QueryCommand(String[] argument, Socket socket) {
         super(argument, socket);
         cacheable = true;

@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
  * Abstrakte Klasse zur Implementierung von Commands, die in einem Thread ausgeführt werden,
  * einen Auftraggeber/username und eine Priorität haben
  */
-public abstract class CuncurCommand extends Command implements Runnable, Comparable<CuncurCommand> {
+public abstract class ConcurrCommand extends Command implements Runnable, Comparable<ConcurrCommand> {
     private String username;
     private byte priority;
     private Socket socket;
@@ -18,11 +18,20 @@ public abstract class CuncurCommand extends Command implements Runnable, Compara
      * @param argument String[] {q/r/s/c/z,username,priority,countyCode,indicatorCode,[year]}
      * @param socket   client socket to send the response
      */
-    public CuncurCommand(String[] argument, Socket socket) {
+    public ConcurrCommand(String[] argument, Socket socket) {
         super(argument);
         this.socket = socket;
         username = argument[1];
         priority = Byte.parseByte(argument[2]);
+    }
+
+    /**
+     * Gibt das Socket des Clients zurück
+     *
+     * @return Socket
+     */
+    public Socket getSocket() {
+        return socket;
     }
 
     @Override
@@ -52,8 +61,14 @@ public abstract class CuncurCommand extends Command implements Runnable, Compara
     public abstract String execute() throws RemoteException;
 
     @Override
-    public int compareTo(CuncurCommand o) {
+    public int compareTo(ConcurrCommand other) {
         //return priority - o.priority;
-        return Byte.compare(priority, o.priority);
+        return Byte.compare(priority, other.priority);
     }
+
+    public String getUsername() {
+        return username;
+    }
+    
+
 }
